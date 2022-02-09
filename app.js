@@ -18,21 +18,21 @@ var app = express();
 // and other expressjs settings for the web server.
 
 // server port number
-app.set('port', process.env.PORT || 5000);
+//app.set('port', process.env.PORT || 5000);
 
 //  templates directory to 'views'
-app.set('views', __dirname + '/views');
+//app.set('views', __dirname + '/views');
 
 // setup template engine - we're using Hogan-Express
-app.set('view engine', 'html');
-app.set('layout','layout');
-app.engine('html', require('hogan-express')); // https://github.com/vol4ok/hogan-express
+// app.set('view engine', 'html');
+// app.set('layout','layout');
+// app.engine('html', require('hogan-express')); // https://github.com/vol4ok/hogan-express
 
-app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(methodOverride());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(favicon(__dirname + '/public/favicon.ico'));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(methodOverride());
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // connecting to database
 app.db = mongoose.connect("mongodb+srv://admin:12@cluster0.se1gk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
